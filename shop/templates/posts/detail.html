@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myclass{
+            padding: 30px;
+            background-color: rgb(255, 193, 7);
+            margin-bottom: 40px;
+            margin-inline-end: 40px;
+           margin-top: 10px;
+           FONT-WEIGHT: 1000;
+           font-size: large;
+            
+        }
+        .mineclass{
+            padding: auto;
+            background-color: brown;
+        }
+    </style>
+</head>
+<div class="myclass">
+    <body class="mineclass">
+        {% if request.user.is_authenticated %}
+        
+            <a href="{% url 'edit_form' detail.id %}"><head><input type="submit" value="Edit" FONT-WEIGHT: 1000="1000"></head></a>
+           
+            <a href="{% url 'delete_form' detail.id %}"><head><input type="submit" value="Delete"></head></a>
+            <hr>
+            <hr>
+        {% endif %}
+            
+        
+        <ol>
+            <li>{{detail.title}}</li>
+            <li>{{detail.text}}</li>
+            <li>{{detail.published}}</li>
+            <li>{{detail.author}}</li>
+        </ol>
+    </body>
+</div>
+</html>
